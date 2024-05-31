@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Data;
 using System.Data.SqlClient;
+
 using CapaEntidad;
+
 namespace CapaDatos
 {
     public class CD_Usuario
@@ -36,16 +39,18 @@ namespace CapaDatos
                                 NombreCompleto = dr["NombreCompleto"].ToString(),
                                 Correo = dr["Correo"].ToString(),
                                 Clave = dr["Clave"].ToString(),
-                                Estado = Convert.ToBoolean(dr["Estado"]),
+                                Estado = Convert.ToBoolean(dr["Estado"])
                             });
                         }
                     }
                 }
-                catch
+                catch(Exception ex)
                 {
-
+                    lista = new List<Usuario>();
                 }
             }
+
+            return lista;
         }
     }
 }
