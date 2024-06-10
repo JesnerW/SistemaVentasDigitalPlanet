@@ -66,7 +66,7 @@
             this.menu.Location = new System.Drawing.Point(0, 72);
             this.menu.Name = "menu";
             this.menu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menu.Size = new System.Drawing.Size(931, 73);
+            this.menu.Size = new System.Drawing.Size(1058, 73);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -142,7 +142,7 @@
             this.submenuregistrarventa.IconColor = System.Drawing.Color.Black;
             this.submenuregistrarventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuregistrarventa.Name = "submenuregistrarventa";
-            this.submenuregistrarventa.Size = new System.Drawing.Size(180, 22);
+            this.submenuregistrarventa.Size = new System.Drawing.Size(128, 22);
             this.submenuregistrarventa.Text = "Registrar";
             this.submenuregistrarventa.Click += new System.EventHandler(this.submenuregistrarventa_Click);
             // 
@@ -152,7 +152,7 @@
             this.submenuverdetalleventa.IconColor = System.Drawing.Color.Black;
             this.submenuverdetalleventa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuverdetalleventa.Name = "submenuverdetalleventa";
-            this.submenuverdetalleventa.Size = new System.Drawing.Size(180, 22);
+            this.submenuverdetalleventa.Size = new System.Drawing.Size(128, 22);
             this.submenuverdetalleventa.Text = "Ver detalle";
             this.submenuverdetalleventa.Click += new System.EventHandler(this.submenuverdetalleventa_Click);
             // 
@@ -178,7 +178,7 @@
             this.submenuregistrarcompra.IconColor = System.Drawing.Color.Black;
             this.submenuregistrarcompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuregistrarcompra.Name = "submenuregistrarcompra";
-            this.submenuregistrarcompra.Size = new System.Drawing.Size(180, 22);
+            this.submenuregistrarcompra.Size = new System.Drawing.Size(128, 22);
             this.submenuregistrarcompra.Text = "Registrar";
             this.submenuregistrarcompra.Click += new System.EventHandler(this.submenuregistrarcompra_Click);
             // 
@@ -188,7 +188,7 @@
             this.submenuverdetallecompra.IconColor = System.Drawing.Color.Black;
             this.submenuverdetallecompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.submenuverdetallecompra.Name = "submenuverdetallecompra";
-            this.submenuverdetallecompra.Size = new System.Drawing.Size(180, 22);
+            this.submenuverdetallecompra.Size = new System.Drawing.Size(128, 22);
             this.submenuverdetallecompra.Text = "Ver detalle";
             this.submenuverdetallecompra.Click += new System.EventHandler(this.submenuverdetallecompra_Click);
             // 
@@ -254,7 +254,7 @@
             this.menutitulo.Location = new System.Drawing.Point(0, 0);
             this.menutitulo.Name = "menutitulo";
             this.menutitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menutitulo.Size = new System.Drawing.Size(931, 72);
+            this.menutitulo.Size = new System.Drawing.Size(1058, 72);
             this.menutitulo.TabIndex = 1;
             this.menutitulo.Text = "menuStrip2";
             // 
@@ -275,7 +275,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 145);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(931, 381);
+            this.contenedor.Size = new System.Drawing.Size(1058, 516);
             this.contenedor.TabIndex = 3;
             // 
             // label2
@@ -307,7 +307,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(931, 526);
+            this.ClientSize = new System.Drawing.Size(1058, 661);
             this.Controls.Add(this.lblusuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.contenedor);
