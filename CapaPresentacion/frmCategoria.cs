@@ -39,7 +39,7 @@ namespace CapaPresentacion
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
-            //LISTAR TODOS LOS USUARIOS
+            //LISTAR TODAS LAS CATEGORIAS
             List<Categoria> lista = new CN_Categoria().Listar();
 
             foreach (Categoria item in lista)
