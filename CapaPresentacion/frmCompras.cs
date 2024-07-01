@@ -12,6 +12,7 @@ using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Modales;
 using CapaPresentacion.Utilidades;
+using DocumentFormat.OpenXml.Wordprocessing;
 namespace CapaPresentacion
 {
     public partial class frmCompras : Form
@@ -85,14 +86,14 @@ namespace CapaPresentacion
 
                 if (oProducto != null)
                 {
-                    txtcodproducto.BackColor = Color.Honeydew;
+                    txtcodproducto.BackColor = System.Drawing.Color.Honeydew;
                     txtidproducto.Text = oProducto.IdProducto.ToString();
                     txtproducto.Text = oProducto.Nombre;
                     txtpreciocompra.Select();
                 }
                 else
                 {
-                    txtcodproducto.BackColor = Color.MistyRose;
+                    txtcodproducto.BackColor = System.Drawing.Color.MistyRose;
                     txtidproducto.Text = "0";
                     txtproducto.Text = "";
                 }
@@ -155,7 +156,7 @@ namespace CapaPresentacion
         {
             txtidproducto.Text = "0";
             txtcodproducto.Text = "";
-            txtcodproducto.BackColor = Color.White;
+            txtcodproducto.BackColor = System.Drawing.Color.White;
             txtproducto.Text = "";
             txtpreciocompra.Text = "";
             txtprecioventa.Text = "";
@@ -173,5 +174,155 @@ namespace CapaPresentacion
             txttotalpagar.Text = total.ToString("0.00");
         }
 
+        private void dgvdata_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+
+            if (e.ColumnIndex == 6)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.delete.Width;
+                var h = Properties.Resources.delete.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.delete, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvdata.Columns[e.ColumnIndex].Name == "btneliminar")
+            {
+                int indice = e.RowIndex;
+
+                if (indice >= 0)
+                {
+                    dgvdata.Rows.RemoveAt(indice);
+                    calcularTotal();
+                }
+            }
+        }
+
+        private void txtpreciocompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (txtpreciocompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".") { 
+                    e.Handled= true;
+                }
+                else
+                {
+                    if(Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
+                    {
+                        e.Handled= false;
+                    }
+                    else
+                    {
+                        e.Handled= true;
+                    }
+                }
+            }
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            if(Convert.ToInt32(txtidproveedor.Text) == 0)
+            {
+                MessageBox.Show("Debe seleccionar un proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (dgvdata.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe ingresar productos en la compra", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            DataTable detalle_compra = new DataTable();
+
+            detalle_compra.Columns.Add("IdProducto", typeof(int));
+            detalle_compra.Columns.Add("PrecioCompra", typeof(decimal));
+            detalle_compra.Columns.Add("PrecioVenta", typeof(decimal));
+            detalle_compra.Columns.Add("Cantidad", typeof(int));
+            detalle_compra.Columns.Add("MontoTotal", typeof(decimal));
+
+            foreach (DataGridViewRow row in dgvdata.Rows) {
+                detalle_compra.Rows.Add(
+                    new object[]
+                    {
+                        Convert.ToInt32(row.Cells["IdProducto"].Value.ToString()),
+                        row.Cells["PrecioCompra"].Value.ToString(),
+                        row.Cells["PrecioVenta"].Value.ToString(),
+                        row.Cells["Cantidad"].Value.ToString(),
+                        row.Cells["SubTotal"].Value.ToString()
+                    });            
+            }
+
+            int idcorrelativo = new CN_Compra().ObtenerCorrelativo();
+            string numerodocumento = string.Format("{0:00000}", idcorrelativo);
+
+            Compra oCompra = new Compra()
+            {
+                oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
+                oProveedor = new Proveedor() { IdProveedor = Convert.ToInt32(txtidproveedor.Text) },
+                TipoDocumento = ((OpcionCombo)cbotipodocumento.SelectedItem).Texto,
+                NumeroDocumento = numerodocumento,
+                MontoTotal = Convert.ToDecimal(txttotalpagar.Text)
+            };
+
+            string mensaje = string.Empty;
+            bool respuesta = new CN_Compra().Registrar(oCompra, detalle_compra, out mensaje);
+
+            if (respuesta)
+            {
+                var result = MessageBox.Show("Numero de compra generada:\n" + numerodocumento + "\n\n¿Desea copiar al portapapeles?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)                 
+                    Clipboard.SetText(numerodocumento);
+
+                txtidproveedor.Text = "0";
+                txtdocproveedor.Text = "";
+                txtnombreproveedor.Text = "";
+                dgvdata.Rows.Clear();
+                calcularTotal();
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        private void txtprecioventa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (txtprecioventa.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
     }
 }
