@@ -37,6 +37,7 @@
             this.txtdocumento = new System.Windows.Forms.TextBox();
             this.btningresar = new FontAwesome.Sharp.IconButton();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,34 +79,38 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(258, 34);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(258, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(97, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "Nro Documento:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(258, 91);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(258, 107);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.Size = new System.Drawing.Size(70, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "Contraseña";
             // 
             // txtclave
             // 
-            this.txtclave.Location = new System.Drawing.Point(259, 107);
+            this.txtclave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtclave.Location = new System.Drawing.Point(259, 125);
             this.txtclave.Name = "txtclave";
             this.txtclave.PasswordChar = '*';
-            this.txtclave.Size = new System.Drawing.Size(232, 20);
+            this.txtclave.Size = new System.Drawing.Size(232, 21);
             this.txtclave.TabIndex = 5;
             // 
             // txtdocumento
             // 
-            this.txtdocumento.Location = new System.Drawing.Point(259, 50);
+            this.txtdocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdocumento.Location = new System.Drawing.Point(259, 79);
             this.txtdocumento.Name = "txtdocumento";
-            this.txtdocumento.Size = new System.Drawing.Size(232, 20);
+            this.txtdocumento.Size = new System.Drawing.Size(232, 21);
             this.txtdocumento.TabIndex = 6;
             // 
             // btningresar
@@ -114,14 +119,16 @@
             this.btningresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btningresar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btningresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btningresar.ForeColor = System.Drawing.Color.White;
             this.btningresar.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
             this.btningresar.IconColor = System.Drawing.Color.White;
             this.btningresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btningresar.IconSize = 21;
-            this.btningresar.Location = new System.Drawing.Point(261, 158);
+            this.btningresar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btningresar.Location = new System.Drawing.Point(261, 162);
             this.btningresar.Name = "btningresar";
-            this.btningresar.Size = new System.Drawing.Size(100, 30);
+            this.btningresar.Size = new System.Drawing.Size(100, 32);
             this.btningresar.TabIndex = 7;
             this.btningresar.Text = "Ingresar";
             this.btningresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -135,14 +142,16 @@
             this.btncancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btncancelar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.Color.White;
             this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.btncancelar.IconColor = System.Drawing.Color.White;
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btncancelar.IconSize = 21;
-            this.btncancelar.Location = new System.Drawing.Point(391, 158);
+            this.btncancelar.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btncancelar.Location = new System.Drawing.Point(391, 162);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(100, 30);
+            this.btncancelar.Size = new System.Drawing.Size(100, 32);
             this.btncancelar.TabIndex = 8;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -150,12 +159,23 @@
             this.btncancelar.UseVisualStyleBackColor = false;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(298, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(152, 23);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "INICIAR SESION";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(514, 214);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btningresar);
             this.Controls.Add(this.txtdocumento);
@@ -186,5 +206,6 @@
         private System.Windows.Forms.TextBox txtdocumento;
         private FontAwesome.Sharp.IconButton btningresar;
         private FontAwesome.Sharp.IconButton btncancelar;
+        private System.Windows.Forms.Label label5;
     }
 }
