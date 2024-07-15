@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.txttotalpagar = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -91,7 +91,7 @@
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnguardar.IconSize = 18;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.btnguardar.Location = new System.Drawing.Point(836, 377);
+            this.btnguardar.Location = new System.Drawing.Point(797, 464);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(99, 31);
             this.btnguardar.TabIndex = 72;
@@ -103,7 +103,7 @@
             // txttotalpagar
             // 
             this.txttotalpagar.Enabled = false;
-            this.txttotalpagar.Location = new System.Drawing.Point(836, 242);
+            this.txttotalpagar.Location = new System.Drawing.Point(797, 329);
             this.txttotalpagar.Name = "txttotalpagar";
             this.txttotalpagar.Size = new System.Drawing.Size(99, 20);
             this.txttotalpagar.TabIndex = 71;
@@ -113,7 +113,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(836, 226);
+            this.label12.Location = new System.Drawing.Point(797, 313);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 13);
             this.label12.TabIndex = 70;
@@ -125,7 +125,7 @@
             this.btnagregarproducto.IconColor = System.Drawing.Color.Green;
             this.btnagregarproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnagregarproducto.IconSize = 32;
-            this.btnagregarproducto.Location = new System.Drawing.Point(836, 134);
+            this.btnagregarproducto.Location = new System.Drawing.Point(797, 134);
             this.btnagregarproducto.Name = "btnagregarproducto";
             this.btnagregarproducto.Size = new System.Drawing.Size(99, 60);
             this.btnagregarproducto.TabIndex = 69;
@@ -137,15 +137,15 @@
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvdata.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
@@ -154,20 +154,20 @@
             this.Cantidad,
             this.Subtotal,
             this.btneliminar});
-            this.dgvdata.Location = new System.Drawing.Point(201, 201);
+            this.dgvdata.Location = new System.Drawing.Point(162, 201);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdata.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdata.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(628, 207);
+            this.dgvdata.Size = new System.Drawing.Size(628, 295);
             this.dgvdata.TabIndex = 68;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
@@ -228,7 +228,7 @@
             this.groupBox3.Controls.Add(this.txtcodproducto);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(201, 129);
+            this.groupBox3.Location = new System.Drawing.Point(162, 129);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(628, 66);
             this.groupBox3.TabIndex = 67;
@@ -363,7 +363,7 @@
             this.groupBox2.Controls.Add(this.txtdoccliente);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(518, 57);
+            this.groupBox2.Location = new System.Drawing.Point(479, 57);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(417, 66);
             this.groupBox2.TabIndex = 66;
@@ -428,7 +428,7 @@
             this.groupBox1.Controls.Add(this.txtfecha);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(201, 57);
+            this.groupBox1.Location = new System.Drawing.Point(162, 57);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(311, 66);
             this.groupBox1.TabIndex = 65;
@@ -474,7 +474,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(201, 22);
+            this.label9.Location = new System.Drawing.Point(162, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(146, 25);
             this.label9.TabIndex = 64;
@@ -485,14 +485,14 @@
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(189, 9);
+            this.label10.Location = new System.Drawing.Point(150, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(758, 412);
+            this.label10.Size = new System.Drawing.Size(758, 498);
             this.label10.TabIndex = 63;
             // 
             // txtpagocon
             // 
-            this.txtpagocon.Location = new System.Drawing.Point(836, 304);
+            this.txtpagocon.Location = new System.Drawing.Point(797, 391);
             this.txtpagocon.Name = "txtpagocon";
             this.txtpagocon.Size = new System.Drawing.Size(99, 20);
             this.txtpagocon.TabIndex = 74;
@@ -503,7 +503,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(836, 288);
+            this.label13.Location = new System.Drawing.Point(797, 375);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(56, 13);
             this.label13.TabIndex = 73;
@@ -512,7 +512,7 @@
             // txtcambio
             // 
             this.txtcambio.Enabled = false;
-            this.txtcambio.Location = new System.Drawing.Point(836, 350);
+            this.txtcambio.Location = new System.Drawing.Point(797, 437);
             this.txtcambio.Name = "txtcambio";
             this.txtcambio.Size = new System.Drawing.Size(99, 20);
             this.txtcambio.TabIndex = 76;
@@ -521,7 +521,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(836, 334);
+            this.label14.Location = new System.Drawing.Point(797, 421);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(45, 13);
             this.label14.TabIndex = 75;
@@ -531,7 +531,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 457);
+            this.ClientSize = new System.Drawing.Size(1058, 519);
             this.Controls.Add(this.txtcambio);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtpagocon);

@@ -144,10 +144,12 @@ namespace CapaPresentacion
 
             if (!producto_existe)
             {
-                bool respuesta = new CN_Venta().RestarStock(
-                    Convert.ToInt32(txtidproducto.Text), 
-                    Convert.ToInt32(txtcantidad.Value.ToString())
-                );
+                //bool respuesta = new CN_Venta().RestarStock(
+                //    Convert.ToInt32(txtidproducto.Text), 
+                //    Convert.ToInt32(txtcantidad.Value.ToString())
+                //);
+
+                bool respuesta = true;
 
                 if (respuesta)
                 {
@@ -213,10 +215,12 @@ namespace CapaPresentacion
 
                 if (indice >= 0)
                 {
-                    bool respuesta = new CN_Venta().SumarStock(
-                        Convert.ToInt32(dgvdata.Rows[indice].Cells["IdProducto"].Value.ToString()),
-                        Convert.ToInt32(dgvdata.Rows[indice].Cells["Cantidad"].Value.ToString())
-                    );
+                    //bool respuesta = new CN_Venta().SumarStock(
+                    //    Convert.ToInt32(dgvdata.Rows[indice].Cells["IdProducto"].Value.ToString()),
+                    //    Convert.ToInt32(dgvdata.Rows[indice].Cells["Cantidad"].Value.ToString())
+                    //);
+
+                    bool respuesta = true;
 
                     if (respuesta)
                     { 

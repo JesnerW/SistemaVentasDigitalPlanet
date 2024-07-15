@@ -77,6 +77,11 @@ namespace CapaPresentacion
             txtcodigo.Text = "";
             txtnombre.Text = "";
             txtdescripcion.Text = "";
+
+            txtpreciocompra.Text = "";
+            txtprecioventa.Text = "";
+            txtcantidad.Text = "";
+
             cbocategoria.SelectedIndex = 0;
             cboestado.SelectedIndex = 0;
 
@@ -126,7 +131,20 @@ namespace CapaPresentacion
             }
             else
             {
-                bool resultado = new CN_Producto().Editar(obj, out Mensaje);
+                Producto objEditar = new Producto()
+                {
+                    IdProducto = Convert.ToInt32(txtid.Text),
+                    Codigo = txtcodigo.Text,
+                    Nombre = txtnombre.Text,
+                    Descripcion = txtdescripcion.Text,
+                    PrecioCompra = Convert.ToDecimal(txtpreciocompra.Text == "" ? "0" : txtpreciocompra.Text),
+                    PrecioVenta = Convert.ToDecimal(txtprecioventa.Text == "" ? "0" : txtprecioventa.Text),
+                    Stock = Convert.ToInt32(txtcantidad.Text == "" ? 0 : txtcantidad.Value),
+                    oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(((OpcionCombo)cbocategoria.SelectedItem).Valor) },
+                    Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false,
+                };
+
+                bool resultado = new CN_Producto().Editar(objEditar, out Mensaje);
 
                 if (resultado)
                 {
@@ -135,6 +153,9 @@ namespace CapaPresentacion
                     row.Cells["Codigo"].Value = txtcodigo.Text;
                     row.Cells["Nombre"].Value = txtnombre.Text;
                     row.Cells["Descripcion"].Value = txtdescripcion.Text;
+                    row.Cells["PrecioCompra"].Value = Convert.ToDecimal(txtpreciocompra.Text == "" ? "0" : txtpreciocompra.Text).ToString("0.00");
+                    row.Cells["PrecioVenta"].Value = Convert.ToDecimal(txtprecioventa.Text == "" ? "0" : txtprecioventa.Text).ToString("0.00");
+                    row.Cells["Stock"].Value = txtcantidad.Text == "" ? "0" : txtcantidad.Value.ToString();
                     row.Cells["IdCategoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Valor.ToString();
                     row.Cells["Categoria"].Value = ((OpcionCombo)cbocategoria.SelectedItem).Texto.ToString();
                     row.Cells["EstadoValor"].Value = ((OpcionCombo)cboestado.SelectedItem).Valor.ToString();
@@ -181,6 +202,10 @@ namespace CapaPresentacion
                     txtcodigo.Text = dgvdata.Rows[indice].Cells["Codigo"].Value.ToString();
                     txtnombre.Text = dgvdata.Rows[indice].Cells["Nombre"].Value.ToString();
                     txtdescripcion.Text = dgvdata.Rows[indice].Cells["Descripcion"].Value.ToString();
+
+                    txtpreciocompra.Text = dgvdata.Rows[indice].Cells["PrecioCompra"].Value.ToString();
+                    txtprecioventa.Text = dgvdata.Rows[indice].Cells["PrecioVenta"].Value.ToString();
+                    txtcantidad.Text = dgvdata.Rows[indice].Cells["Stock"].Value.ToString();
 
                     foreach (OpcionCombo oc in cbocategoria.Items)
                     {
@@ -314,6 +339,58 @@ namespace CapaPresentacion
                     catch
                     {
                         MessageBox.Show("Error al generar reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
+
+        private void txtpreciocompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (txtpreciocompra.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void txtprecioventa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                if (txtprecioventa.Text.Trim().Length == 0 && e.KeyChar.ToString() == ".")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    if (Char.IsControl(e.KeyChar) || e.KeyChar.ToString() == ".")
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
                     }
                 }
             }

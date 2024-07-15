@@ -121,7 +121,14 @@ namespace CapaDatos
                     cmd.ExecuteNonQuery();
 
                     Respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
-                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();  
+                    Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
+                    
+                    foreach(DataRow row in DetalleVenta.Rows)
+                    {
+                        int idProducto = Convert.ToInt32(row["IdProducto"]);
+                        int cantidad = Convert.ToInt32(row["Cantidad"]);
+                        RestarStock(idProducto, cantidad);
+                    }
                 }
             }
             catch (Exception ex)

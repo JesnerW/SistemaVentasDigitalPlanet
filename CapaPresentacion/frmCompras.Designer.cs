@@ -81,9 +81,9 @@
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(154, 9);
+            this.label10.Location = new System.Drawing.Point(155, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(749, 412);
+            this.label10.Size = new System.Drawing.Size(749, 498);
             this.label10.TabIndex = 48;
             // 
             // label9
@@ -91,7 +91,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(162, 19);
+            this.label9.Location = new System.Drawing.Point(163, 19);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(164, 25);
             this.label9.TabIndex = 49;
@@ -104,7 +104,7 @@
             this.groupBox1.Controls.Add(this.txtfecha);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(162, 54);
+            this.groupBox1.Location = new System.Drawing.Point(163, 54);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(311, 66);
             this.groupBox1.TabIndex = 50;
@@ -154,7 +154,7 @@
             this.groupBox2.Controls.Add(this.txtdocproveedor);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(479, 54);
+            this.groupBox2.Location = new System.Drawing.Point(480, 54);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(417, 66);
             this.groupBox2.TabIndex = 51;
@@ -235,7 +235,7 @@
             this.groupBox3.Controls.Add(this.txtcodproducto);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(162, 126);
+            this.groupBox3.Location = new System.Drawing.Point(163, 126);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(628, 66);
             this.groupBox3.TabIndex = 54;
@@ -383,7 +383,7 @@
             this.Cantidad,
             this.Subtotal,
             this.btneliminar});
-            this.dgvdata.Location = new System.Drawing.Point(162, 198);
+            this.dgvdata.Location = new System.Drawing.Point(163, 198);
             this.dgvdata.MultiSelect = false;
             this.dgvdata.Name = "dgvdata";
             this.dgvdata.ReadOnly = true;
@@ -396,7 +396,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvdata.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(628, 207);
+            this.dgvdata.Size = new System.Drawing.Size(628, 300);
             this.dgvdata.TabIndex = 55;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
@@ -450,7 +450,7 @@
             // 
             // txttotalpagar
             // 
-            this.txttotalpagar.Location = new System.Drawing.Point(797, 348);
+            this.txttotalpagar.Location = new System.Drawing.Point(797, 440);
             this.txttotalpagar.Name = "txttotalpagar";
             this.txttotalpagar.Size = new System.Drawing.Size(99, 20);
             this.txttotalpagar.TabIndex = 61;
@@ -460,7 +460,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(796, 332);
+            this.label12.Location = new System.Drawing.Point(796, 424);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 13);
             this.label12.TabIndex = 60;
@@ -479,7 +479,7 @@
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnguardar.IconSize = 26;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnguardar.Location = new System.Drawing.Point(797, 374);
+            this.btnguardar.Location = new System.Drawing.Point(797, 466);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.btnguardar.Size = new System.Drawing.Size(99, 31);
@@ -495,7 +495,7 @@
             this.btnagregarproducto.IconColor = System.Drawing.Color.Green;
             this.btnagregarproducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnagregarproducto.IconSize = 32;
-            this.btnagregarproducto.Location = new System.Drawing.Point(797, 131);
+            this.btnagregarproducto.Location = new System.Drawing.Point(798, 131);
             this.btnagregarproducto.Name = "btnagregarproducto";
             this.btnagregarproducto.Size = new System.Drawing.Size(99, 60);
             this.btnagregarproducto.TabIndex = 56;
@@ -508,7 +508,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 433);
+            this.ClientSize = new System.Drawing.Size(1058, 519);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.txttotalpagar);
             this.Controls.Add(this.label12);

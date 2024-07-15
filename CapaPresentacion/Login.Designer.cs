@@ -103,7 +103,7 @@
             this.txtclave.Name = "txtclave";
             this.txtclave.PasswordChar = '*';
             this.txtclave.Size = new System.Drawing.Size(232, 21);
-            this.txtclave.TabIndex = 5;
+            this.txtclave.TabIndex = 6;
             // 
             // txtdocumento
             // 
@@ -111,7 +111,7 @@
             this.txtdocumento.Location = new System.Drawing.Point(259, 79);
             this.txtdocumento.Name = "txtdocumento";
             this.txtdocumento.Size = new System.Drawing.Size(232, 21);
-            this.txtdocumento.TabIndex = 6;
+            this.txtdocumento.TabIndex = 5;
             // 
             // btningresar
             // 
