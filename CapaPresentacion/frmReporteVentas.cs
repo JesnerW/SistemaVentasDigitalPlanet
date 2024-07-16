@@ -11,7 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
+using System.Diagnostics;
 namespace CapaPresentacion
 {
     public partial class frmReporteVentas : Form
@@ -140,6 +141,10 @@ namespace CapaPresentacion
                         hoja.ColumnsUsed().AdjustToContents();
                         wb.SaveAs(savefile.FileName);
                         MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Abrir la carpeta donde se guardó el archivo
+                        string folderPath = Path.GetDirectoryName(savefile.FileName);
+                        Process.Start("explorer.exe", folderPath);
                     }
                     catch
                     {

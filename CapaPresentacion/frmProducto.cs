@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 using CapaPresentacion.Utilidades;
 using CapaEntidad;
 using CapaNegocio;
 using ClosedXML.Excel;
+using System.Diagnostics;
 namespace CapaPresentacion
 {
     public partial class frmProducto : Form
@@ -31,13 +32,20 @@ namespace CapaPresentacion
 
             List<Categoria> listaCategoria = new CN_Categoria().Listar();
 
-            foreach (Categoria item in listaCategoria)
+            if(listaCategoria.Count == 0)
             {
-                cbocategoria.Items.Add(new OpcionCombo() { Valor = item.IdCategoria, Texto = item.Descripcion });
+                MessageBox.Show("Primero registre una categoria para registrar un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            cbocategoria.DisplayMember = "Texto";
-            cbocategoria.ValueMember = "Valor";
-            cbocategoria.SelectedIndex = 0;
+            else
+            {
+                foreach (Categoria item in listaCategoria)
+                {
+                    cbocategoria.Items.Add(new OpcionCombo() { Valor = item.IdCategoria, Texto = item.Descripcion });
+                }
+                cbocategoria.DisplayMember = "Texto";
+                cbocategoria.ValueMember = "Valor";
+                cbocategoria.SelectedIndex = 0;
+            }
 
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
@@ -335,6 +343,10 @@ namespace CapaPresentacion
                         hoja.ColumnsUsed().AdjustToContents();
                         wb.SaveAs(savefile.FileName);
                         MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Abrir la carpeta donde se guardó el archivo
+                        string folderPath = Path.GetDirectoryName(savefile.FileName);
+                        Process.Start("explorer.exe", folderPath);
                     }
                     catch
                     {

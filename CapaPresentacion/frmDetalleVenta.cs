@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -149,6 +150,10 @@ namespace CapaPresentacion
                     pdfDoc.Close();
                     stream.Close();
                     MessageBox.Show("Documento Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Abrir la carpeta donde se guardó el archivo
+                    string folderPath = Path.GetDirectoryName(savefile.FileName);
+                    Process.Start("explorer.exe", folderPath);
                 }
             }
         }

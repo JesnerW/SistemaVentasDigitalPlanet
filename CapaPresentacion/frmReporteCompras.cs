@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using CapaEntidad;
 using CapaNegocio;
 using CapaPresentacion.Utilidades;
 using ClosedXML.Excel;
+using System.IO;
 
 namespace CapaPresentacion
 {
@@ -158,6 +160,11 @@ namespace CapaPresentacion
                         hoja.ColumnsUsed().AdjustToContents();
                         wb.SaveAs(savefile.FileName);
                         MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        // Abrir la carpeta donde se guardó el archivo
+                        string folderPath = Path.GetDirectoryName(savefile.FileName);
+                        Process.Start("explorer.exe", folderPath);
                     }
                     catch
                     {
